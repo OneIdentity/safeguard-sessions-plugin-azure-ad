@@ -1,0 +1,6 @@
+api: 1.2
+type: aa
+name: SPS_Azure_AD
+description: One Identity Safeguard for Privileged Sessions Azure AD plugin
+version: 0.0.1
+entry_point: main.py

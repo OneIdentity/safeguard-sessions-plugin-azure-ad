@@ -1,0 +1,4 @@
+0.0.1 2019-11-28
+
+Initial version. Authenticate but do nothing with the user information. Not usable in production as there is no way to authorize the usage.
+
