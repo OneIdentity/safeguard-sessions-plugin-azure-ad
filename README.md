@@ -28,3 +28,33 @@ The Support Portal provides self-help tools you can use to solve problems quickl
 - Engage in community discussions
 - Chat with support engineers online
 - View services to assist you with your product
+
+# OAuth 2.0
+
+Relation to OAuth 2.0 RFC7649, RFC8252.
+
+## Terminology
+
+OAuth 2.0 defines several concepts and roles. This section provides a mapping between OAuth 2.0 and SPS terminology.
+
+The OAuth 2.0 resource owner is identified as the gateway user in an SPS session. The gateway user may be a human, thus we sometimes refer to it as end-user.
+
+User-agent is the gateway user's web browser.
+
+Resource server is an SPS (virtual) appliance.
+
+Client is again the SPS appliance as Safeguard does not require additional agent installation at the end-user.
+
+Authorization server is a Microsoft Azure AD, also known as Login server.
+
+## Grant flow
+
+Azure AD for SPS plugin utilizes the [Device code flow](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki/Device-Code-Flow). For further design details see [OAuth 2.0 device authorization grant flow](https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-device-code).
+
+## Pre-requisites
+
+Add a new application to your Azure AD on the Azure Portal, see [Quickstart: Register an application with the Microsoft identity platform](https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app).
+
+Leave "Redirect URIs" empty as it is not required for the device code flow.
+
+Make sure to set "Treat client application as a public client" to YES in the "Authentication" settings.
